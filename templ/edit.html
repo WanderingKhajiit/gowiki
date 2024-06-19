@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="../styles/index.css"><head>
+<body>
+<h1>Editing {{.Title}}<h1> 
+  <form action="/save/{{.Title}}" method ="POST">
+  <textarea name="body" row="20" cols="80">{{printf "%s" .Body}}</textarea><br>
+  <input type="submit" value="Save">
+</form>
+</body>
+<script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+</html>

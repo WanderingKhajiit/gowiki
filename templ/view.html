@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="../styles/index.css"><head>
+<body id="result">
+<header>
+  <nav>
+    <form action="/user/sign" method="get">
+      <button type="submit"><p>Register</p></button>
+    </form>
+    <form action="/user/sign" method="get">
+      <button type="submit"><p>Sign In</p></button>
+    </form>
+  </nav>
+</header>
+<h1>{{.Title}}</h1>
+
+<p>[<a href="/edit/{{.Title}}">edit</a>]</p>
+
+<div class="a"><p class="a">{{printf "%s" .Body}}</p></div>
+<footer>
+  <nav class="navbar">
+    <div class="navdiv" hx-get="/view/FrontPage" hx-trigger="click" hx-target="#result" href=>Home</div>
+  <form form="seForm" method="get">
+    <input class="navdiv" type="text" 
+    hx-get="/view/"
+    hx-replace-url="true" 
+    name="seInput" 
+    hx-target="body"></input>
+  </form>
+  <button form="seForm" class="a" hx-include="[name='seInput']" hx-trigger="click" type="search"><p>Search</p></button>
+  </nav>
+</footer>
+</body>
+<script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+</html>
